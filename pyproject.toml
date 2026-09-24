@@ -1,0 +1,27 @@
+[project]
+name = "ai-news-aggregator1"
+version = "0.1.0"
+description = "Daily shopping/skincare offers digest: scrapes brand sites and Gmail promos into Postgres, summarizes with Claude, and emails the result."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "google-api-python-client>=2.200.0",
+    "google-auth-httplib2>=0.4.2",
+    "google-auth-oauthlib>=1.4.1",
+    "openai>=3.11.0",
+    "psycopg[binary]>=3.3.5",
+    "pydantic-settings>=2.15.0",
+    "requests>=2.34.2",
+    "sqlalchemy>=2.0.52",
+]
+
+[project.scripts]
+ai-news-aggregator1 = "app.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "app"

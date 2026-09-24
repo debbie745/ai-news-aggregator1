@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv sync *)",
+      "Bash(uv run *)",
+      "Bash(docker compose *)",
+      "Bash(open -a Docker)",
+      "Bash(lsof -nP -iTCP:5432 -sTCP:LISTEN)",
+      "Bash(time uv run python -m app.db.create_tables)",
+      "Bash(docker port *)",
+      "Bash(python3 -c ' *)",
+      "Bash(time uv run python -c ' *)",
+      "Bash(time .venv/bin/python -c ' *)",
+      "Bash(time uv run --no-sync true)",
+      "Bash(time uv run true)",
+      "Bash(env)",
+      "Bash(UV_VERBOSE=1 timeout 10 uv run --no-sync true)",
+      "Bash(echo \"exit: $?\")"
+    ]
+  }
+}

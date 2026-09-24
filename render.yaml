@@ -1,0 +1,21 @@
+services:
+  - type: cron
+    name: ai-news-aggregator1
+    runtime: docker
+    dockerfilePath: ./docker/Dockerfile
+    dockerContext: .
+    # 14:00 UTC = 7am Arizona (no DST, UTC-7 year-round). Adjust to taste.
+    schedule: "0 14 * * *"
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SMTP_USERNAME
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: DIGEST_RECIPIENT_EMAIL
+        sync: false
+      - key: ENABLE_GMAIL_INGESTION
+        value: "false"
